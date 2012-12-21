@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-h1 {
+h1{
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -41,7 +41,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: $grayLight;
 }
 
 p {
@@ -53,18 +53,19 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  hover {
+    color: white;
+    text-decoration: none;
+  }
+
 }
 
-#logo:hove {
-  color: #fff;
-  text-decoration: none;
-}
 
 /* footer */
 
@@ -72,27 +73,24 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
-}
+  color: $grayLight;
+  a {
+    color: #555;
+  }
+  &:a:hover {
+    color: #222;
+  }
 
-footer a {
-  color: #555;
-}
+  small {
+    float: left;
+  }
 
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
