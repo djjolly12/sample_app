@@ -11,3 +11,4 @@ describe "UserPages" do
     it { should have_selector('title', text: full_title('Sign Up')) }
   end
 end
+
