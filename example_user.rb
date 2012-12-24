@@ -6,6 +6,7 @@ class User
     @email = attributes[:email]
   end
 
+  #noinspection RubyInstanceVariableToStringInspection,RubyInstanceVariableToStringInspection
   def formatted_email
     "#{@name} <#{@email}>"
   end

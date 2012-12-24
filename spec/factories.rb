@@ -7,4 +7,11 @@ FactoryGirl.define do
     password "testing"
     password_confirmation "testing"
   end
+
+  factory :new_user do
+    name "New Name"
+    email "new@example.com"
+    password "testing"
+    password_confirmation "testing"
+  end
 end
