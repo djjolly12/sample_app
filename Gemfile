@@ -9,6 +9,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
   gem 'annotate'
+  gem 'faker', '1.1.2'
 end
 
 # Gems used only for assets and not required
@@ -20,6 +21,8 @@ group :assets do
   gem 'bootstrap-sass', '2.1'
   gem 'rails', '3.2.9'
   gem 'bcrypt-ruby', '3.0.1'
+  gem 'will_paginate', '3.0.3'
+  gem 'bootstrap-will_paginate', '0.0.9'
 
 end
 
