@@ -37,6 +37,8 @@ describe User do
       @user.save!
       @user.toggle!(:admin)
     end
+
+    it { should be_admin }
   end
 
   describe "when name is not present" do
