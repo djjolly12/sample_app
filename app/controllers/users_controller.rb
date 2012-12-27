@@ -4,11 +4,20 @@ class UsersController < ApplicationController
   before_filter :admin_user, only: :destroy
 
   def new
-    @user = User.new
+    if not signed_in?
+      @user = User.new
+    else
+      flash[:fail] = "You already have an existing account"
+      redirect_to users_path
+    end
   end
 
   def show
-    @user = User.find(params[:id])
+    if signed_in?
+      @user = User.find(params[:id])
+    else
+      redirect_to(signin_url, notice: "Please sign in.")
+    end
   end
 
   def create

@@ -55,14 +55,6 @@ describe "UserPages" do
     it { should have_selector('title', text: 'Sign Up') }
   end
 
-  describe "profile page" do
-    let(:user) { FactoryGirl.create(:user) }
-    before { visit user_path(user) }
-
-    it { should have_selector('h1', text: user.name) }
-    it { should have_selector('title', text: user.name) }
-  end
-
   describe "signup" do
 
     before { visit signup_path }
@@ -83,6 +75,7 @@ describe "UserPages" do
         fill_in "Confirmation",   with: "mercedes"
       end
 
+
       it "should create a user" do
         expect { click_button submit}.to change(User, :count).by(1)
       end
@@ -95,6 +88,13 @@ describe "UserPages" do
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
         it { should have_link('Sign out') }
 
+        describe "profile page" do
+          let(:user) { FactoryGirl.create(:user) }
+          before { visit user_path(user) }
+
+          it { should have_selector('h1', text: user.name) }
+          it { should have_selector('title', text: user.name) }
+        end
       end
 
     end
