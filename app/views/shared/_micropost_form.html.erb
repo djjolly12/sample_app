@@ -1,7 +1,15 @@
+<script language="javascript" type="text/javascript">
+    function textLimit(field, maxlen) {
+        if (field.value.length > maxlen + 1)
+            alert('your input has been truncated!');
+        if (field.value.length > maxlen)
+            field.value = field.value.substring(0, maxlen);
+    }
+</script>
 <%= form_for(@micropost) do |f| %>
     <%=  render 'shared/error_messages', object: f.object %>
     <div class="field">
-      <%=  f.text_area :content, placeholder: "Compose new micropost..." %>
+      <%=  f.text_area  :content, placeholder: "Compose new micropost...", :maxlength => 140 %>
     </div>
     <%=  f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
